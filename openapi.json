@@ -1,0 +1,968 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "crAPI Swagger Mitmproxy2Swagger",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://crapi.apisec.ai",
+      "description": "The default server"
+    }
+  ],
+  "paths": {
+    "/workshop/api/shop/products": {
+      "get": {
+        "summary": "GET products",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "products": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "string"
+                          },
+                          "image_url": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "credit": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "example": {
+                  "products": [
+                    {
+                      "id": 1,
+                      "name": "Seat",
+                      "price": "10.00",
+                      "image_url": "images/seat.svg"
+                    },
+                    {
+                      "id": 2,
+                      "name": "Wheel",
+                      "price": "10.00",
+                      "image_url": "images/wheel.svg"
+                    },
+                    {
+                      "id": 3,
+                      "name": "Feree Monie",
+                      "price": "-1000000.00",
+                      "image_url": "google.com"
+                    },
+                    {
+                      "id": 4,
+                      "name": "Feree Monie2",
+                      "price": "-1000000.00",
+                      "image_url": "Http://localhost//etc/passwd"
+                    },
+                    {
+                      "id": 5,
+                      "name": "Feree Monie2",
+                      "price": "-1000000.00",
+                      "image_url": "ftp://127.0.0.1"
+                    },
+                    {
+                      "id": 6,
+                      "name": "Mijolnir",
+                      "price": "20.00",
+                      "image_url": "http://img2.wikia.nocookie.net/__cb20131126010256/disney/images/1/15/Thor-hammer-1-.jpg"
+                    },
+                    {
+                      "id": 7,
+                      "name": "Mijolnir",
+                      "price": "-20.00",
+                      "image_url": "http://img2.wikia.nocookie.net/__cb20131126010256/disney/images/1/15/Thor-hammer-1-.jpg"
+                    },
+                    {
+                      "id": 8,
+                      "name": "Mijolnir",
+                      "price": "-10000.00",
+                      "image_url": "http://img2.wikia.nocookie.net/__cb20131126010256/disney/images/1/15/Thor-hammer-1-.jpg"
+                    },
+                    {
+                      "id": 9,
+                      "name": "Mijolnir",
+                      "price": "10.00",
+                      "image_url": "http://img2.wikia.nocookie.net/__cb20131126010256/disney/images/1/15/Thor-hammer-1-.jpg"
+                    },
+                    {
+                      "id": 10,
+                      "name": "Mijolnir",
+                      "price": "10.00",
+                      "image_url": "http://img2.wikia.nocookie.net/__cb20131126010256/disney/images/1/15/Thor-hammer-1-.jpg"
+                    }
+                  ],
+                  "credit": 100
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/api/v2/user/dashboard": {
+      "get": {
+        "summary": "GET dashboard",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "number": {
+                      "type": "string"
+                    },
+                    "picture_url": {
+                      "type": "object"
+                    },
+                    "video_url": {
+                      "type": "object"
+                    },
+                    "video_name": {
+                      "type": "object"
+                    },
+                    "available_credit": {
+                      "type": "number"
+                    },
+                    "video_id": {
+                      "type": "number"
+                    },
+                    "role": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1053,
+                  "name": "test",
+                  "email": "test@senzo.com",
+                  "number": "98765432101",
+                  "picture_url": null,
+                  "video_url": null,
+                  "video_name": null,
+                  "available_credit": 100,
+                  "video_id": 0,
+                  "role": "ROLE_USER"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/api/v2/vehicle/vehicles": {
+      "get": {
+        "summary": "GET vehicles",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {}
+                },
+                "example": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/api/v2/user/change-email": {
+      "post": {
+        "summary": "POST change-email",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "The token has been sent to your email. If you have used example.com email, check your email using the MailHog web portal.   billmorrell@akunzoom.com",
+                  "status": 200
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "old_email": {
+                    "type": "string"
+                  },
+                  "new_email": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "old_email": "test@senzo.com",
+                "new_email": "billmorrell@akunzoom.com"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/community/api/v2/community/posts/recent": {
+      "get": {
+        "summary": "GET recent",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "content": {
+                        "type": "string"
+                      },
+                      "author": {
+                        "type": "object",
+                        "properties": {
+                          "nickname": {
+                            "type": "string"
+                          },
+                          "email": {
+                            "type": "string"
+                          },
+                          "vehicleid": {
+                            "type": "string"
+                          },
+                          "profile_pic_url": {
+                            "type": "string"
+                          },
+                          "created_at": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "comments": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "authorid": {
+                        "type": "number"
+                      },
+                      "CreatedAt": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "example": [
+                  {
+                    "id": "dcrNdQjpzD9iGADpxwwqVF",
+                    "title": "test hary",
+                    "content": "222",
+                    "author": {
+                      "nickname": "test",
+                      "email": "harya2@bolshaya.ru",
+                      "vehicleid": "",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T14:15:39.924Z"
+                    },
+                    "comments": [],
+                    "authorid": 1063,
+                    "CreatedAt": "2023-08-17T14:15:39.924Z"
+                  },
+                  {
+                    "id": "YQSiCsySe4c6iYrKiQCrN9",
+                    "title": "test hary",
+                    "content": "222",
+                    "author": {
+                      "nickname": "test",
+                      "email": "harya2@bolshaya.ru",
+                      "vehicleid": "",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T14:14:35.95Z"
+                    },
+                    "comments": [],
+                    "authorid": 1063,
+                    "CreatedAt": "2023-08-17T14:14:35.95Z"
+                  },
+                  {
+                    "id": "bMdcfziPZFrWqUxVwMeTDE",
+                    "title": "test",
+                    "content": "api",
+                    "author": {
+                      "nickname": "test",
+                      "email": "test1@qr.com",
+                      "vehicleid": "",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T13:23:06.112Z"
+                    },
+                    "comments": [
+                      {
+                        "id": "",
+                        "content": "api test",
+                        "CreatedAt": "2023-08-17T13:23:16.783Z",
+                        "author": {
+                          "nickname": "test",
+                          "email": "test1@qr.com",
+                          "vehicleid": "",
+                          "profile_pic_url": "",
+                          "created_at": "2023-08-17T13:23:16.783Z"
+                        }
+                      }
+                    ],
+                    "authorid": 1062,
+                    "CreatedAt": "2023-08-17T13:23:06.112Z"
+                  },
+                  {
+                    "id": "EAgo5VE6QDNaCoRh3853aK",
+                    "title": "hello",
+                    "content": "new api hacker",
+                    "author": {
+                      "nickname": "hello",
+                      "email": "test@hacker1.com",
+                      "vehicleid": "",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T12:54:54.899Z"
+                    },
+                    "comments": [
+                      {
+                        "id": "",
+                        "content": "test",
+                        "CreatedAt": "2023-08-17T12:55:07.394Z",
+                        "author": {
+                          "nickname": "hello",
+                          "email": "test@hacker1.com",
+                          "vehicleid": "",
+                          "profile_pic_url": "",
+                          "created_at": "2023-08-17T12:55:07.394Z"
+                        }
+                      }
+                    ],
+                    "authorid": 1060,
+                    "CreatedAt": "2023-08-17T12:54:54.899Z"
+                  },
+                  {
+                    "id": "iJyweouXRdxqFrRLSMGrYg",
+                    "title": "test",
+                    "content": "teeeeeeeeeeeeeeeeeeeeest",
+                    "author": {
+                      "nickname": "test",
+                      "email": "test@hacker.com",
+                      "vehicleid": "",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T12:49:09.684Z"
+                    },
+                    "comments": [],
+                    "authorid": 1059,
+                    "CreatedAt": "2023-08-17T12:49:09.684Z"
+                  },
+                  {
+                    "id": "g4sniakTshHRn8ti8Ldouj",
+                    "title": "iloveapisec",
+                    "content": "iloveapisec",
+                    "author": {
+                      "nickname": "Lin",
+                      "email": "lin@linemail.com",
+                      "vehicleid": "ba20cc9e-7d2f-4acb-883c-8d47171cfa80",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T09:28:42.225Z"
+                    },
+                    "comments": [],
+                    "authorid": 1054,
+                    "CreatedAt": "2023-08-17T09:28:42.225Z"
+                  },
+                  {
+                    "id": "paoPRPTbqCPWE69HE66Zdh",
+                    "title": "lintest",
+                    "content": "lintest",
+                    "author": {
+                      "nickname": "Lin",
+                      "email": "lin@linemail.com",
+                      "vehicleid": "",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T08:57:15.814Z"
+                    },
+                    "comments": [],
+                    "authorid": 1054,
+                    "CreatedAt": "2023-08-17T08:57:15.814Z"
+                  },
+                  {
+                    "id": "DL3zmUjXtMn2vGRZX75p26",
+                    "title": "Test",
+                    "content": "Test",
+                    "author": {
+                      "nickname": "test",
+                      "email": "Test@test123.com",
+                      "vehicleid": "",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T07:54:38.29Z"
+                    },
+                    "comments": [
+                      {
+                        "id": "",
+                        "content": "Hi Test",
+                        "CreatedAt": "2023-08-17T07:54:53.577Z",
+                        "author": {
+                          "nickname": "test",
+                          "email": "Test@test123.com",
+                          "vehicleid": "",
+                          "profile_pic_url": "",
+                          "created_at": "2023-08-17T07:54:53.577Z"
+                        }
+                      }
+                    ],
+                    "authorid": 458,
+                    "CreatedAt": "2023-08-17T07:54:38.29Z"
+                  },
+                  {
+                    "id": "Wyhz7U8AYKPVYNXXrVmkhn",
+                    "title": "api",
+                    "content": "sec",
+                    "author": {
+                      "nickname": "bob crapi",
+                      "email": "bob@yum.com",
+                      "vehicleid": "1f41c761-eb85-49e2-872a-1c756c4b5044",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T06:28:44.884Z"
+                    },
+                    "comments": [],
+                    "authorid": 1047,
+                    "CreatedAt": "2023-08-17T06:28:44.884Z"
+                  },
+                  {
+                    "id": "E4hyaTgerjUAuUAE3WeJyi",
+                    "title": "yup",
+                    "content": "yup",
+                    "author": {
+                      "nickname": "Clay Hax",
+                      "email": "clayhax@crapi.com",
+                      "vehicleid": "2a76ad6f-abe6-4fb6-bead-b06840c1760b",
+                      "profile_pic_url": "",
+                      "created_at": "2023-08-17T06:22:13.51Z"
+                    },
+                    "comments": [
+                      {
+                        "id": "",
+                        "content": "sure! i'd date ya",
+                        "CreatedAt": "2023-08-17T06:28:27.827Z",
+                        "author": {
+                          "nickname": "bob crapi",
+                          "email": "bob@yum.com",
+                          "vehicleid": "1f41c761-eb85-49e2-872a-1c756c4b5044",
+                          "profile_pic_url": "",
+                          "created_at": "2023-08-17T06:28:27.827Z"
+                        }
+                      }
+                    ],
+                    "authorid": 1046,
+                    "CreatedAt": "2023-08-17T06:22:13.51Z"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/community/api/v2/community/posts/dcrNdQjpzD9iGADpxwwqVF": {
+      "get": {
+        "summary": "GET dcrndqjpzd9igadpxwwqvf",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "author": {
+                      "type": "object",
+                      "properties": {
+                        "nickname": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "vehicleid": {
+                          "type": "string"
+                        },
+                        "profile_pic_url": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "comments": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "authorid": {
+                      "type": "number"
+                    },
+                    "CreatedAt": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": "dcrNdQjpzD9iGADpxwwqVF",
+                  "title": "test hary",
+                  "content": "222",
+                  "author": {
+                    "nickname": "test",
+                    "email": "harya2@bolshaya.ru",
+                    "vehicleid": "",
+                    "profile_pic_url": "",
+                    "created_at": "2023-08-17T14:15:39.924Z"
+                  },
+                  "comments": [],
+                  "authorid": 1063,
+                  "CreatedAt": "2023-08-17T14:15:39.924Z"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/community/api/v2/community/posts/dcrNdQjpzD9iGADpxwwqVF/comment": {
+      "post": {
+        "summary": "POST comment",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "author": {
+                      "type": "object",
+                      "properties": {
+                        "nickname": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "vehicleid": {
+                          "type": "string"
+                        },
+                        "profile_pic_url": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "comments": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          },
+                          "CreatedAt": {
+                            "type": "string"
+                          },
+                          "author": {
+                            "type": "object",
+                            "properties": {
+                              "nickname": {
+                                "type": "string"
+                              },
+                              "email": {
+                                "type": "string"
+                              },
+                              "vehicleid": {
+                                "type": "string"
+                              },
+                              "profile_pic_url": {
+                                "type": "string"
+                              },
+                              "created_at": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "authorid": {
+                      "type": "number"
+                    },
+                    "CreatedAt": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": "dcrNdQjpzD9iGADpxwwqVF",
+                  "title": "test hary",
+                  "content": "222",
+                  "author": {
+                    "nickname": "test",
+                    "email": "harya2@bolshaya.ru",
+                    "vehicleid": "",
+                    "profile_pic_url": "",
+                    "created_at": "2023-08-17T14:15:39.924Z"
+                  },
+                  "comments": [
+                    {
+                      "id": "",
+                      "content": "zdfdrg",
+                      "CreatedAt": "2023-08-17T14:21:49.427096546Z",
+                      "author": {
+                        "nickname": "test",
+                        "email": "test@senzo.com",
+                        "vehicleid": "",
+                        "profile_pic_url": "",
+                        "created_at": "2023-08-17T14:21:49.427096456Z"
+                      }
+                    }
+                  ],
+                  "authorid": 1063,
+                  "CreatedAt": "2023-08-17T14:15:39.924Z"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "content": "zdfdrg"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/community/api/v2/community/posts": {
+      "post": {
+        "summary": "POST posts",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "author": {
+                      "type": "object",
+                      "properties": {
+                        "nickname": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "vehicleid": {
+                          "type": "string"
+                        },
+                        "profile_pic_url": {
+                          "type": "string"
+                        },
+                        "created_at": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "comments": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "authorid": {
+                      "type": "number"
+                    },
+                    "CreatedAt": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "id": "i2M5cm7r9Nz3Ga6P2wrfUJ",
+                  "title": "post",
+                  "content": "posted",
+                  "author": {
+                    "nickname": "test",
+                    "email": "test@senzo.com",
+                    "vehicleid": "",
+                    "profile_pic_url": "",
+                    "created_at": "2023-08-17T14:22:04.456944402Z"
+                  },
+                  "comments": [],
+                  "authorid": 1053,
+                  "CreatedAt": "2023-08-17T14:22:04.456944501Z"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "type": "string"
+                  }
+                }
+              },
+              "example": {
+                "title": "post",
+                "content": "posted"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workshop/api/shop/orders": {
+      "post": {
+        "summary": "POST orders",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "credit": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "example": {
+                  "id": 1953,
+                  "message": "Order sent successfully.",
+                  "credit": 90
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product_id": {
+                    "type": "number"
+                  },
+                  "quantity": {
+                    "type": "number"
+                  }
+                }
+              },
+              "example": {
+                "product_id": 2,
+                "quantity": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "/workshop/api/shop/orders/all": {
+      "get": {
+        "summary": "GET all",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "orders": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "user": {
+                            "type": "object",
+                            "properties": {
+                              "email": {
+                                "type": "string"
+                              },
+                              "number": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "product": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "price": {
+                                "type": "string"
+                              },
+                              "image_url": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "quantity": {
+                            "type": "number"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "created_on": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "orders": [
+                    {
+                      "id": 1953,
+                      "user": {
+                        "email": "test@senzo.com",
+                        "number": "98765432101"
+                      },
+                      "product": {
+                        "id": 2,
+                        "name": "Wheel",
+                        "price": "10.00",
+                        "image_url": "images/wheel.svg"
+                      },
+                      "quantity": 1,
+                      "status": "delivered",
+                      "created_on": "2023-08-17T14:22:44.494789"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-path-templates": [
+    "ignore:/%3Cstring%3E",
+    "ignore:/google.com",
+    "ignore:/image.jpg",
+    "ignore:/kkvjq%61mdk",
+    "ignore:/zwrtxqvaxanjxkanz6"
+  ]
+}
